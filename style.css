@@ -1,107 +1,163 @@
-.h1 {
-    color: rgb(9, 9, 11);
-    font-size: 80px;
-    border: 5px solid rgb(84, 148, 109);
-    text-align: left;
-    margin-left: 10px;
-}
-.h2 {
-    color: rgb(9, 9, 11);
-    font-size: 50px;
-    border: 5px solid rgb(84, 148, 109);
-    text-align: left;
-    margin-left: 10px;
-}  
-.h3 {
-    color: rgb(9, 9, 11);
-    font-size: 30px;
-    border: 5px solid rgb(84, 148, 109);
-    text-align: left;
-    margin-left: 10px;
-}
-.button {
+/* --- Estilo Minimalista para vertic7 --- */
 
-  position: absolute;
-    top: 50%;
-    left: 450px;
-    height: 70%;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    color: var(--btnfontcolor);
-    background: var(--btncolor);
-    border: 2px solid #333;
+:root {
+    --bg-color: #ffffff;      /* Fondo blanco puro */
+    --text-main: #1a1a1a;     /* Negro casi puro para texto */
+    --text-muted: #707070;    /* Gris para descripciones */
+    --accent: #f5f5f5;        /* Gris muy claro para fondos secundarios */
+    --border-color: #eaeaea;  /* Líneas divisorias muy finas */
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Tipografía limpia */
 }
 
-/* Botones */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 40px 20px; /* Más espacio alrededor */
+}
+
+/* Header & Logo */
+.title-container {
+    text-align: center;
+    margin-bottom: 60px; /* Mucho espacio antes del menú */
+}
+
+.logo {
+    height: 60px; /* Logo más discreto */
+    width: auto;
+    object-fit: contain;
+    /* Si tu logo tiene fondo blanco, esto lo integra perfectamente */
+}
+
+/* Navegación Minimalista */
 .controls {
     display: flex;
-    gap: 12px;
-    padding: 16px;
-    margin-left: 12px;
-}
-.btn-custom {
-    padding: 8px 14px;
-    background: #c6cbc6;
-    border: 2px solid #333;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 80px; /* Espacio generoso antes de los productos */
+    border-bottom: 1px solid var(--border-color); /* Línea sutil decorativa */
+    padding-bottom: 20px;
 }
 
-/* Galerías */
-.gallery {
-    display: none;
-    margin: 20px;
-    gap: 12px;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+.btn-custom {
+    padding: 10px 20px;
+    background: none; /* Sin fondo */
+    color: var(--text-main);
+    border: 1px solid transparent; /* Borde invisible por defecto */
+    border-radius: 4px; /* Bordes menos redondeados, más rectos */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase; /* Texto en mayúsculas para estilo sobrio */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: all 0.2s ease;
 }
+
+/* Efecto hover sutil */
+.btn-custom:hover {
+    background-color: var(--accent);
+    border-color: var(--border-color);
+}
+
+/* Estado activo (cuando la galería está visible) */
+.btn-custom.active {
+    background-color: var(--text-main);
+    color: var(--bg-color);
+}
+
+/* Sistema de Galerías */
+.gallery {
+    display: none; /* Oculto por defecto */
+    gap: 30px; /* Más espacio entre productos */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Columnas un poco más grandes */
+    max-width: 1200px; /* Contenedor centrado y limitado */
+    margin: 0 auto;
+}
+
 .gallery.visible {
     display: grid;
-}
-.gallery img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-.placeholder {
-    padding: 40px;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
+    animation: fadeIn 0.5s ease; /* Animación suave de aparición */
 }
 
-    .title {
-        color: rgb(9, 9, 11);
-        font-size: 80px;
-        border: 5px solid rgb(84, 148, 109);
-        text-align: left;
-        margin-left: 5px;
-        
-    }
-    .description {
-        color: rgb(0, 0, 10);
-        font-size: 20px;
-        border: 2px solid rgb(84, 148, 109);
-        text-align: left;
-        margin-left: 10px;
-        padding: 10px;
-        
-    
-    }
-    .logo {
-        width: 220px;
-        height: auto;
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0px 0px
-        
-    }
-.buy-btn {
-    background-color: powderblue;
-    border: 2px solid #333;
-    border-radius: 8px;
-    cursor: pointer;
-    
+/* Productos Minimalistas */
+.product {
+    background: none;
+    padding: 0; /* Sin padding interno */
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none; /* Sin sombras */
+    text-align: left; /* Alineación a la izquierda */
+    display: flex;
+    flex-direction: column;
 }
+
+.gallery img {
+    width: 100%;
+    height: 300px; /* Imágenes más altas y protagonistas */
+    object-fit: cover;
+    border-radius: 0;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease;
+}
+
+/* Efecto sutil en la imagen al pasar el mouse */
+.product:hover img {
+    opacity: 0.8;
+}
+
+/* Botón de Compra Minimalista */
+.buy-btn {
+    background-color: var(--text-main); /* Botón negro */
+    color: var(--bg-color); /* Texto blanco */
+    border: none;
+    border-radius: 0;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin-top: auto; /* Empuja el botón al final si hay descripciones largas */
+}
+
+.buy-btn:hover {
+    background-color: #333; /* Gris oscuro al hover */
+}
+
+/* Placeholders y Footer */
+.placeholder {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px;
+    color: var(--text-muted);
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+}
+
+.footer-info {
+    background-color: var(--accent); /* Gris muy suave, no aquamarine */
+    color: var(--text-muted);
+    padding: 40px 20px;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 13px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animación simple */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+

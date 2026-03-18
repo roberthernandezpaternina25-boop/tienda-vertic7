@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vertic7</title>
+    <title>vertic7 | Minimal Urban Fashion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="title">
-        <img src="logo/logo%231.jpg" alt="Logo de vertic7" class="logo">
-    </h1>
-    
-    <p class="description">Explora nuestra colección de moda urbana con estilo único y vanguardista. Descubre las últimas tendencias en ropa, calzado y accesorios para un look auténtico y moderno.</p>
-    
+
+    <header class="title-container">
+        <img src="logo/logo%231.jpg" alt="Vertic7 Logo" class="logo">
+    </header>
+        
     <nav class="controls">
         <button class="btn-custom" data-category="zapatos">Zapatos</button>
         <button class="btn-custom" data-category="camisetas">Camisetas</button>
@@ -20,69 +19,45 @@
         <button class="btn-custom" data-category="accesorios">Accesorios</button>
         <button class="btn-custom" data-category="conjuntos">Conjuntos</button>
         <button class="btn-custom" data-category="ropaDeportiva">Ropa Deportiva</button>
-        <button class="btn-custom" data-category="utilesDelHogar">Útiles del Hogar</button>
-    </nav>
+        <button class="btn-custom" data-category="utilesDelHogar">Hogar</button> </nav>
 
     <main>
         <section id="gallery-zapatos" class="gallery" aria-hidden="true">
             <div class="product">
-                <img src="zapatos/zapatos.jpg" alt="Zapatos 1">
-                <button class="buy-btn" data-product="Zapatos 1">Comprar</button>
+                <img src="zapatos/zapatos.jpg" alt="Zapatos Urbanos 1">
+                <button class="buy-btn" data-product="Zapatos Urbanos 1">Comprar</button>
             </div>
             <div class="product">
-                <img src="zapatos/zapatos1.jpg" alt="Zapatos 2">
-                <button class="buy-btn" data-product="Zapatos 2">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos2.jpg" alt="Zapatos 3">
-                <button class="buy-btn" data-product="Zapatos 3">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos3.jpg" alt="Zapatos 4">
-                <button class="buy-btn" data-product="Zapatos 4">Comprar</button>
+                <img src="zapatos/zapatos1.jpg" alt="Zapatos Urbanos 2">
+                <button class="buy-btn" data-product="Zapatos Urbanos 2">Comprar</button>
             </div>
         </section>
 
         <section id="gallery-camisetas" class="gallery" aria-hidden="true">
             <div class="product">
-                <img src="camisetas/camiseta%231.jpg" alt="Camiseta 1">
-                <button class="buy-btn" data-product="Camiseta 1">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="camisetas/camiseta2.jpg" alt="Camiseta 2">
-                <button class="buy-btn" data-product="Camiseta 2">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="camisetas/camisetas.jpg" alt="Camiseta 3">
-                <button class="buy-btn" data-product="Camiseta 3">Comprar</button>
+                <img src="camisetas/camiseta%231.jpg" alt="Camiseta Básica 1">
+                <button class="buy-btn" data-product="Camiseta Básica 1">Comprar</button>
             </div>
         </section>
 
         <section id="gallery-jeans" class="gallery" aria-hidden="true">
             <div class="product">
-                <img src="jeans/jeans.jpg" alt="Pantalón">
-                <button class="buy-btn" data-product="Pantalón">Comprar</button>
+                <img src="jeans/jeans.jpg" alt="Jean Slim Fit">
+                <button class="buy-btn" data-product="Jean Slim Fit">Comprar</button>
             </div>
         </section>
 
-        <section id="gallery-accesorios" class="gallery" aria-hidden="true">
-            <p class="placeholder">No hay accesorios disponibles.</p>
-        </section>
-
-        <section id="gallery-conjuntos" class="gallery" aria-hidden="true">
-            <p class="placeholder">No hay conjuntos disponibles.</p>
-        </section>
-
-        <section id="gallery-ropa-deportiva" class="gallery" aria-hidden="true">
-            <p class="placeholder">No hay ropa deportiva disponible.</p>
-        </section>
-
-        <section id="gallery-utiles-del-hogar" class="gallery" aria-hidden="true">
-            <p class="placeholder">No hay útiles del hogar disponibles.</p>
-        </section>
-
+        <section id="gallery-accesorios" class="gallery" aria-hidden="true"><p class="placeholder">Próximamente accesorios.</p></section>
+        <section id="gallery-conjuntos" class="gallery" aria-hidden="true"><p class="placeholder">Próximamente conjuntos.</p></section>
+        <section id="gallery-ropa-deportiva" class="gallery" aria-hidden="true"><p class="placeholder">Próximamente ropa deportiva.</p></section>
+        <section id="gallery-utiles-del-hogar" class="gallery" aria-hidden="true"><p class="placeholder">Próximamente útiles del hogar.</p></section>
     </main>
 
-    <script src="script.js"></script>
+    <footer class="footer-info">
+        <p>vertic7 &copy; 2023</p>
+        <p style="margin-top: 10px;">Explora nuestra colección de moda urbana con estilo único y vanguardista.</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
+</html>
