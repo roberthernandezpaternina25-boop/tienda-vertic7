@@ -99,7 +99,7 @@ body {
 }
 
 .gallery img {
-    width: 100%;
+    width: 100%; /* Imágenes que ocupan todo el ancho del producto */
     height: 300px; /* Imágenes más altas y protagonistas */
     object-fit: cover;
     border-radius: 0;
