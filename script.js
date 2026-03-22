@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'hogar': [
             
         ],
-};
+
 };
 
 
