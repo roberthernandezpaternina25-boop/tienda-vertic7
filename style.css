@@ -1,4 +1,4 @@
-/* --- Estilo Minimalista para vertic7 --- */
+
 
 :root {
     --bg-color: #ffffff;      /* Fondo blanco puro */
@@ -36,7 +36,7 @@ body {
     /* Si tu logo tiene fondo blanco, esto lo integra perfectamente */
 }
 
-/* Navegación Minimalista */
+/* Navegación */
 .controls {
     display: flex;
     flex-wrap: wrap;
@@ -87,7 +87,7 @@ body {
     animation: fadeIn 0.5s ease; /* Animación suave de aparición */
 }
 
-/* Productos Minimalistas */
+/* Productos*/
 .product {
     background: none;
     padding: 0; /* Sin padding interno */
@@ -128,10 +128,6 @@ body {
     margin-top: auto; /* Empuja el botón al final si hay descripciones largas */
 }
 
-.buy-btn:hover {
-    background-color: #333; /* Gris oscuro al hover */
-}
-
 /* Placeholders y Footer */
 .placeholder {
     grid-column: 1 / -1;
@@ -161,3 +157,103 @@ body {
 }
 
 
+
+/* Contenedor de sub-botones */
+.sub-buttons {
+    display: none;              /* Ocultos por defecto */
+    flex-direction: column;     /* Aparecen en columna */
+    gap: 8px;                   /* Espacio entre ellos */
+    margin-top: 8px;            /* Separación respecto al botón principal */
+    animation: fadeIn 0.3s ease;
+}
+
+/* Cuando se despliegan */
+.sub-buttons.show {
+    display: flex;
+}
+
+/* Soporte si el script añade la clase 'active' en la categoría */
+.category.active .sub-buttons {
+    display: flex;
+}
+
+/* Estilo de los sub-botones */
+.sub-btn {
+    padding: 8px 16px;
+    background-color: var(--accent);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+/* Hover en sub-botones */
+.sub-btn:hover {
+    background-color: var(--text-main);
+    color: var(--bg-color);
+}
+
+/* Estilos para el enlace de WhatsApp en el footer */
+.whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Estilos del carrito */
+.cart-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 12px;
+}
+.cart-count {
+    background: #ff4d4f;
+    color: #fff;
+    border-radius: 999px;
+    padding: 2px 6px;
+    font-size: 12px;
+    line-height: 1;
+}
+.cart-panel {
+    position: fixed;
+    right: -380px;
+    top: 0;
+    height: 100%;
+    width: 360px;
+    background: #fff;
+    border-left: 1px solid var(--border-color);
+    box-shadow: -8px 0 24px rgba(0,0,0,0.08);
+    transition: right 0.28s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+.cart-panel.open { right: 0; }
+.cart-header { display:flex; justify-content:space-between; align-items:center; padding:8px 4px; }
+.cart-items { padding: 8px; overflow:auto; flex:1; }
+.cart-row { display:flex; gap:8px; align-items:center; padding:8px 4px; border-bottom:1px solid var(--border-color); }
+.cart-thumb { width:64px; height:64px; object-fit:cover; border:1px solid var(--border-color); }
+.cart-info { flex:1; }
+.cart-qty { display:flex; gap:6px; align-items:center; }
+.cart-qty button { padding:4px 8px; cursor:pointer; }
+.remove-item { background:none; border:none; color:#c0392b; cursor:pointer; }
+.cart-footer { padding:8px; border-top:1px solid var(--border-color); display:flex; flex-direction:column; gap:8px; }
+.cart-actions { display:flex; gap:8px; }
+.btn-secondary { background:#f2f2f2; border:1px solid var(--border-color); padding:8px 10px; cursor:pointer; }
+.btn-primary { background:var(--text-main); color:var(--bg-color); border:none; padding:8px 10px; cursor:pointer; }
+.whatsapp-link svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}

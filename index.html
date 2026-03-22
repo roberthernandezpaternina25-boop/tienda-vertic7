@@ -10,224 +10,102 @@
 
     <header class="title-container">
         <img src="logo/logo%231.jpg" alt="Vertic7 Logo" class="logo">
+        <button id="cart-toggle" class="cart-toggle" aria-label="Abrir carrito">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#1a1a1a" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14l.84-2h7.45c.73 0 1.38-.41 1.68-1.03l1.93-4.25-1.8-.82L16.2 9H9.14L8.36 7H3v2h3.36l1.8 4.5c.24.6.79 1 1.44 1H17v-2H9.34L8.7 14H7.16z"/></svg>
+            <span id="cart-count" class="cart-count">0</span>
+        </button>
     </header>
         
     <nav class="controls">
-        <button class="btn-custom" data-category="zapatos">Zapatos</button>
-        <button class="btn-custom" data-category="camisetas">Camisetas</button>
-        <button class="btn-custom" data-category="jeans">Jeans Hombre</button>
-        <button class="btn-custom" data-category="accesorios">Accesorios</button>
-        <button class="btn-custom" data-category="conjuntos">Conjuntos</button>
-        <button class="btn-custom" data-category="ropaDeportiva">Ropa Deportiva</button>
-        <button class="btn-custom" data-category="utilesDelHogar">Hogar</button> </nav>
 
+    <div class="category">
+        <button class="btn-custom">Zapatos</button>
+        <div class="sub-buttons">
+            <button data-category="zapatos-hombre">Hombre</button>
+            <button data-category="zapatos-mujer">Mujer</button>
+        </div>
+    </div>
+
+    <div class="category">
+        <button class="btn-custom">Camisetas</button>
+        <div class="sub-buttons">
+            <button data-category="camisetas-hombre">Hombre</button>
+            <button data-category="camisetas-mujer">Mujer</button>
+        </div>
+    </div>
+
+    <div class="category">
+        <button class="btn-custom">Jeans</button>
+        <div class="sub-buttons">
+            <button data-category="jeans-hombre">Hombre</button>
+            <button data-category="jeans-mujer">Mujer</button>
+        </div>
+    </div>
+
+    <div class="category">
+        <button class="btn-custom">Accesorios</button>
+        <div class="sub-buttons">
+            <button data-category="accesorios-hombre">Hombre</button>
+            <button data-category="accesorios-mujer">Mujer</button>
+        </div>
+    </div>
+
+    <div class="category">
+        <button class="btn-custom">Conjuntos</button>
+        <div class="sub-buttons">
+            <button data-category="conjuntos-hombre">Hombre</button>
+            <button data-category="conjuntos-mujer">Mujer</button>
+        </div>
+    </div>
+
+    <div class="category">
+        <button class="btn-custom">Ropa Deportiva</button>
+        <div class="sub-buttons">
+            <button data-category="deporte-hombre">Hombre</button>
+            <button data-category="deporte-mujer">Mujer</button>
+        </div>
+    </div>
+
+    <div class="category">
+        <button class="btn-custom">Hogar</button>
+        <div class="sub-buttons">
+            <button data-category="hogar">General</button>
+        </div>
+    </div>
+
+</nav>
     <main>
-        <section id="gallery-zapatos" class="gallery" aria-hidden="true">
-            <div class="product">
-                <img src="zapatos/zapatos5.jpeg" alt="Zapatos Urbanos 1">
-                <button class="buy-btn" data-product="Zapatos Urbanos 1">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos6.jpeg" alt="Zapatos Urbanos 2">
-                <button class="buy-btn" data-product="Zapatos Urbanos 2">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos7.jpeg" alt="Zapatos Urbanos 3">
-                <button class="buy-btn" data-product="Zapatos Urbanos 3">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos8.jpeg" alt="Zapatos Urbanos 4">
-                <button class="buy-btn" data-product="Zapatos Urbanos 4">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos9.jpeg" alt="Zapatos Urbanos 5">
-                <button class="buy-btn" data-product="Zapatos Urbanos 5">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos10.jpeg" alt="Zapatos Urbanos 6">
-                <button class="buy-btn" data-product="Zapatos Urbanos 6">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos11.jpeg" alt="Zapatos Urbanos 7">
-                <button class="buy-btn" data-product="Zapatos Urbanos 7">Comprar</button>
-            </div>
-             <div class="product">
-                <img src="zapatos/zapatos12.jpeg" alt="Zapatos Urbanos 8">
-                <button class="buy-btn" data-product="Zapatos Urbanos 8">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="zapatos/zapatos13.jpeg" alt="Zapatos Urbanos 9">
-                <button class="buy-btn" data-product="Zapatos Urbanos 9">Comprar</button>
-            </div>
-        </section>
-
-        <section id="gallery-camisetas" class="gallery" aria-hidden="true">
-            <div class="product">
-                <img src="camisetas/camiseta3.jpeg" alt="Camiseta Básica 1">
-                <button class="buy-btn" data-product="Camiseta Básica 1">Comprar</button>
-            </div>
-                <div class="product">
-                    <img src="camisetas/camiseta4.jpeg" alt="Camiseta Básica 2">
-                    <button class="buy-btn" data-product="Camiseta Básica 2">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta5.jpeg" alt="Camiseta Básica 3">
-                    <button class="buy-btn" data-product="Camiseta Básica 3">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta6.jpeg" alt="Camiseta Básica 4">
-                    <button class="buy-btn" data-product="Camiseta Básica 4">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta7.jpeg" alt="Camiseta Básica 5">
-                    <button class="buy-btn" data-product="Camiseta Básica 5">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta8.jpeg" alt="Camiseta Básica 6">
-                    <button class="buy-btn" data-product="Camiseta Básica 6">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta9.jpeg" alt="Camiseta Básica 7">
-                    <button class="buy-btn" data-product="Camiseta Básica 7">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta10.jpeg" alt="Camiseta Básica 8">
-                    <button class="buy-btn" data-product="Camiseta Básica 8">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta11.jpeg" alt="Camiseta Básica 9">
-                    <button class="buy-btn" data-product="Camiseta Básica 9">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta12.jpeg" alt="Camiseta Básica 10">
-                    <button class="buy-btn" data-product="Camiseta Básica 10">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta13.jpeg" alt="Camiseta Básica 11">
-                    <button class="buy-btn" data-product="Camiseta Básica 11">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta14.jpeg" alt="Camiseta Básica 12">
-                    <button class="buy-btn" data-product="Camiseta Básica 12">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta15.jpeg" alt="Camiseta Básica 13">
-                    <button class="buy-btn" data-product="Camiseta Básica 13">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta16.jpeg" alt="Camiseta Básica 14">
-                    <button class="buy-btn" data-product="Camiseta Básica 14">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta17.jpeg" alt="Camiseta Básica 15">
-                    <button class="buy-btn" data-product="Camiseta Básica 15">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="camisetas/camiseta18.jpeg" alt="Camiseta Básica 16">
-                    <button class="buy-btn" data-product="Camiseta Básica 16">Comprar</button>
-        </section>
-
-        <section id="gallery-jeans" class="gallery" aria-hidden="true">
-            <div class="product">
-                <img src="jeans/JeansHombre1.jpeg" alt="Jean Slim Fit">
-                <button class="buy-btn" data-product="Jean Slim Fit">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="jeans/JeansHombre2.jpeg" alt="Jean Regular Fit">
-                <button class="buy-btn" data-product="Jean Regular Fit">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="jeans/JeansHombre3.jpeg" alt="Jean Relaxed Fit">
-                <button class="buy-btn" data-product="Jean Relaxed Fit">Comprar</button>
-            </div>
-                <div class="product">
-                    <img src="jeans/JeansHombre4.jpeg" alt="Jean Tapered Fit">
-                    <button class="buy-btn" data-product="Jean Tapered Fit">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="jeans/JeansHombre5.jpeg" alt="Jean Skinny Fit">
-                    <button class="buy-btn" data-product="Jean Skinny Fit">Comprar</button>
-                </div>
-                    <div class="product">
-                        <img src="jeans/JeansHombre6.jpeg" alt="Jean Wide Fit">
-                        <button class="buy-btn" data-product="Jean Wide Fit">Comprar</button>
-                    </div>
-                    <div class="product">
-                        <img src="jeans/JeansHombre7.jpeg" alt="Jean Bootcut Fit">
-                        <button class="buy-btn" data-product="Jean Bootcut Fit">Comprar</button>
-        </section>
-
-        <section id="gallery-accesorios" class="gallery" arias-hidden="true">
-            <div class="product">
-                <img src="accesorios/reloj1.jpeg" alt="Reloj Urbano 1">
-                <button class="buy-btn" data-product="Reloj Urbano 1">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="accesorios/reloj2.jpeg" alt="Reloj Urbano 2">
-                <button class="buy-btn" data-product="Reloj Urbano 2">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="accesorios/reloj3.jpeg" alt="Reloj Urbano 3">
-                <button class="buy-btn" data-product="Reloj Urbano 3">Comprar</button>
-            </div>
-                <div class="product">
-                    <img src="accesorios/reloj4.jpeg" alt="Reloj Urbano 4">
-                    <button class="buy-btn" data-product="Reloj Urbano 4">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="accesorios/reloj5.jpeg" alt="Reloj Urbano 5">
-                    <button class="buy-btn" data-product="Reloj Urbano 5">Comprar</button>
-                </div>
-                    <div class="product">
-                        <img src="accesorios/billeteria1.jpeg" alt="Billetería 1">
-                        <button class="buy-btn" data-product="Billetería 1">Comprar</button>
-                    </div>
-                    <div class="product">
-                        <img src="accesorios/billetera2.jpeg" alt="Billetería 2">
-                        <button class="buy-btn" data-product="Billetería 2">Comprar</button>
-                    </div>
-                    <div class="product">
-                        <img src="accesorios/billetera3.jpeg" alt="Billetería 3">
-                        <button class="buy-btn" data-product="Billetería 3">Comprar</button>
-                    </div>
-                        <div class="product">
-                            <img src="accesorios/Bolso1.jpeg" alt="Bolso 1">
-                            <button class="buy-btn" data-product="Bolso 1">Comprar</button>
-                        </div>
-                        <div class="product">
-                            <img src="accesorios/termo1.jpeg" alt="Termo 1">
-                            <button class="buy-btn" data-product="Termo 1">Comprar</button> 
-                        </div>
-                        <div class="product">
-                            <img src="accesorios/termo2.jpeg" alt="Termo 2">
-                            <button class="buy-btn" data-product="Termo 2">Comprar</button>
-                        </div>
-        </section>
-
-        <section id="gallery-conjuntos" class="gallery" aria-hidden="true"><p class="placeholder">Próximamente conjuntos.</p></section>
-        <section id="gallery-ropa-deportiva" class="gallery" aria-hidden="true"><p class="placeholder">Próximamente ropa deportiva.</p></section>
-        <section id="gallery-utiles-del-hogar" class="gallery" arias-hidden="true">
-            <div class="product">
-                <img src="UtilesDeHogar/lampara1.jpeg" alt="Lámpara Urbana 1">
-                <button class="buy-btn" data-product="Lámpara Urbana 1">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="UtilesDeHogar/lampara2.jpeg" alt="Lámpara Urbana 2">
-                <button class="buy-btn" data-product="Lámpara Urbana 2">Comprar</button>
-            </div>
-            <div class="product">
-                <img src="UtilesDeHogar/lampara3.jpeg" alt="Lámpara Urbana 3">
-                <button class="buy-btn" data-product="Lámpara Urbana 3">Comprar</button>
-            </div>
-
-
-        </section>
+        <div id="dynamic-gallery" class="gallery" aria-hidden="true"></div>
     </main>
 
     <footer class="footer-info">
         <p>vertic7 &copy; 2026</p>
-        <p style="margin-top: 10px;">Explora nuestra colección de moda urbana con estilo único y vanguardista.</p>
+        <p style="margin-top: 10px;">Nuestros productos se enfocan en entregarte calidad y estilo para tu comodidad y bienestar.</p>
     </footer>
+    <footer class="footer-contact">
+        <p>Contacto: 
+            <a href="https://wa.me/573218920417" target="_blank" rel="noopener" class="whatsapp-link" aria-label="Enviar mensaje por WhatsApp al 3218920417">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="#25D366" d="M12.04 2C6.48 2 2 6.48 2 12.04c0 2.12.62 4.09 1.7 5.77L2 22l4.36-1.38c1.6.95 3.46 1.42 5.68 1.42 5.56 0 10.04-4.48 10.04-10.04C22.08 6.48 17.6 2 12.04 2zm5.03 14.6c-.25.7-1.48 1.34-2.05 1.44-.55.09-1.22.13-3.24-.43-3.18-.86-5.24-3.6-5.4-3.79-.16-.19-1.46-1.79-1.46-3.42 0-1.62.86-2.41 1.16-2.74l.03-.04C7.6 7.62 8.2 7.6 8.4 7.6c.22 0 .43.03.62.02.18-.01.44-.06.69.44.24.49.82 1.7.89 1.82.07.12.11.26.02.42-.1.16-.18.28-.27.43-.09.14-.38.36-.59.56-.2.2-.41.31-.27.58.11.25.5.83 1.07 1.34.74.62 1.37.84 1.68.95.31.12.5.1.68-.06.18-.16.76-.89.96-1.19.2-.3.41-.25.7-.15.3.1 1.9.9 2.24 1.06.34.16.56.24.64.37.09.12.09.7-.16 1.4z"/></svg>
+                3218920417
+            </a>
+        </p>
+    </footer>
+
+    <aside id="cart-panel" class="cart-panel" aria-hidden="true">
+        <header class="cart-header">
+            <h3>Carrito</h3>
+            <button id="cart-close" class="cart-close" aria-label="Cerrar carrito">✕</button>
+        </header>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">Total items: <span id="cart-total">0</span></div>
+            <div class="cart-actions">
+                <button id="clear-cart" class="btn-secondary">Vaciar carrito</button>
+                <button id="place-order" class="btn-primary">Realizar pedido</button>
+            </div>
+        </div>
+    </aside>
+
 
     <script src="script.js"></script>
 </body>
