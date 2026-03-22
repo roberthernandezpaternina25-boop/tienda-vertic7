@@ -3,7 +3,8 @@
 # Hacer copia de seguridad automática antes de mover/editar.
 
 $root = Split-Path -Path $MyInvocation.MyCommand.Path -Parent
-$backupDir = Join-Path $root ("rename_backup_" + (Get-Date -Format "yyyyMMddHHmmss"))
+# Crear copia de seguridad fuera de la carpeta del proyecto para evitar recursión
+$backupDir = Join-Path $env:TEMP ("rename_backup_" + (Get-Date -Format "yyyyMMddHHmmss"))
 New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
 
 $exts = @('*.png','*.jpg','*.jpeg','*.gif','*.webp','*.svg')
@@ -13,6 +14,8 @@ Write-Host "Buscando archivos de imagen y creando copias de seguridad..."
 foreach ($ext in $exts) {
     Get-ChildItem -Path $root -Recurse -Filter $ext -File | ForEach-Object {
         $file = $_
+        # Ignorar archivos dentro de la carpeta de backup (por si acaso)
+        if ($file.FullName -like "$backupDir*") { return }
         $oldFull = $file.FullName
         $oldName = $file.Name
         $base = [System.IO.Path]::GetFileNameWithoutExtension($oldName)
@@ -29,10 +32,25 @@ foreach ($ext in $exts) {
             $newFull = Join-Path $file.DirectoryName $newName
             $counter++
         }
-        if ($newFull -ne $oldFull) {
-            Copy-Item -LiteralPath $oldFull -Destination $backupDir -Force
-            Move-Item -LiteralPath $oldFull -Destination $newFull -Force
-            $mappings += [PSCustomObject]@{ old = $oldName; new = ([System.IO.Path]::GetFileName($newFull)); oldFull=$oldFull; newFull=$newFull }
+        if ($newFull -cne $oldFull) {
+            # Copiar al backup (preservando estructura relativa)
+            $relDir = Resolve-Path -LiteralPath $file.DirectoryName | ForEach-Object { $_.Path.Substring($root.Length).TrimStart('\') }
+            $destBackupDir = if ($relDir) { Join-Path $backupDir $relDir } else { $backupDir }
+            New-Item -ItemType Directory -Path $destBackupDir -Force | Out-Null
+            Copy-Item -LiteralPath $oldFull -Destination (Join-Path $destBackupDir $oldName) -Force
+            # En Windows no siempre cambia sólo la mayúscula, usar renombrado temporal si sólo cambia el case
+            if ($oldFull.ToLower() -eq $newFull.ToLower() -and $oldFull -ne $newFull) {
+                $tmp = Join-Path $file.DirectoryName ("tmp_" + [guid]::NewGuid().ToString() + $extOnly)
+                Move-Item -LiteralPath $oldFull -Destination $tmp -Force
+                Move-Item -LiteralPath $tmp -Destination $newFull -Force
+            } else {
+                Move-Item -LiteralPath $oldFull -Destination $newFull -Force
+            }
+            $relativeOld = Join-Path ($file.DirectoryName.Substring($root.Length).TrimStart('\')) $oldName
+            $relativeNew = Join-Path ($file.DirectoryName.Substring($root.Length).TrimStart('\')) ([System.IO.Path]::GetFileName($newFull))
+            $relativeOld = $relativeOld -replace '\\','/' -replace '^/',''
+            $relativeNew = $relativeNew -replace '\\','/' -replace '^/',''
+            $mappings += [PSCustomObject]@{ old = $oldName; new = ([System.IO.Path]::GetFileName($newFull)); oldFull=$oldFull; newFull=$newFull; relOld=$relativeOld; relNew=$relativeNew }
             Write-Host "Renombrado: $oldName -> $([System.IO.Path]::GetFileName($newFull))"
         }
     }
@@ -43,22 +61,25 @@ if ($mappings.Count -eq 0) { Write-Host "No se encontraron archivos para renombr
 # Actualizar referencias en archivos de código
 $codeFiles = Get-ChildItem -Path $root -Recurse -Include *.html,*.css,*.js -File
 foreach ($cf in $codeFiles) {
+    # Ignorar archivos dentro del backup
+    if ($cf.FullName -like "$backupDir*") { continue }
     $content = Get-Content -Raw -LiteralPath $cf.FullName -ErrorAction SilentlyContinue
     if (-not $content) { continue }
     $original = $content
     foreach ($map in $mappings) {
-        $old = [regex]::Escape($map.old)
+        # Reemplazar tanto rutas relativas completas como sólo nombres de archivo
         $new = $map.new
-        # También reemplazar la versión URL-encoded del nombre (p.ej. logo%231.jpg)
-        try {
-            $urlEncoded = [uri]::EscapeDataString($map.old)
-        } catch {
-            $urlEncoded = $map.old
+        if ($map.relOld) {
+            $oldRelEsc = [regex]::Escape($map.relOld)
+            $content = [regex]::Replace($content, $oldRelEsc, $map.relNew, 'IgnoreCase')
         }
-        $content = [regex]::Replace($content, $old, $new, 'IgnoreCase')
+        $oldNameEsc = [regex]::Escape($map.old)
+        $content = [regex]::Replace($content, $oldNameEsc, $map.new, 'IgnoreCase')
+        # URL-encoded variant
+        try { $urlEncoded = [uri]::EscapeDataString($map.old) } catch { $urlEncoded = $map.old }
         if ($urlEncoded -ne $map.old) {
             $encodedEsc = [regex]::Escape($urlEncoded)
-            $content = [regex]::Replace($content, $encodedEsc, $new, 'IgnoreCase')
+            $content = [regex]::Replace($content, $encodedEsc, $map.new, 'IgnoreCase')
         }
     }
     if ($content -ne $original) {

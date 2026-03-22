@@ -11,22 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mapa de categorías -> lista de rutas de imágenes
     const categories = {
-        'zapatos-hombre': [
+    'zapatos-hombre': [
             'zapatos-hombre/zapatos5.jpeg',
             'zapatos-hombre/zapatos6.jpeg',
             'zapatos-hombre/zapatos7.jpeg',
-            'zapatos-hombre/zapatos8.jpeg'
+            'zapatos-hombre/zapatos8.jpeg',
+            'zapatos-hombre/zapatos9.jpeg'
         ],
-        'zapatos-mujer': [
+    'zapatos-mujer': [
             'zapatos-mujer/zapatos1.jpeg',
-            'zapatos-mujer/zapatos2.jpeg',
-            'zapatos-mujer/zapatos3.jpeg',
-            'zapatos-mujer/zapatos4.jpeg',
-            'zapatos-mujer/zapatos5.jpeg',
-            'zapatos-mujer/zapatos6.jpeg',
-            'zapatos-mujer/zapatos7.jpeg',
-            'zapatos-mujer/zapatos8.jpeg',
-            'zapatos-mujer/zapatos9.jpeg',
             'zapatos-mujer/zapatos10.jpeg',
             'zapatos-mujer/zapatos11.jpeg',
             'zapatos-mujer/zapatos12.jpeg',
@@ -34,16 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
             'zapatos-mujer/zapatos14.jpeg',
             'zapatos-mujer/zapatos15.jpeg',
             'zapatos-mujer/zapatos16.jpeg',
+            'zapatos-mujer/zapatos2.jpeg',
+            'zapatos-mujer/zapatos3.jpeg',
+            'zapatos-mujer/zapatos4.jpeg',
+            'zapatos-mujer/zapatos5.jpeg',
+            'zapatos-mujer/zapatos6.jpeg',
+            'zapatos-mujer/zapatos7.jpeg',
+            'zapatos-mujer/zapatos8.jpeg',
+            'zapatos-mujer/zapatos9.jpeg'
         ],
-        'camisetas-hombre': [],
-        'camisetas-mujer': [
-            'camisetas-mujer/camiseta3.jpeg',
-            'camisetas-mujer/camiseta4.jpeg',
-            'camisetas-mujer/camiseta5.jpeg',
-            'camisetas-mujer/camiseta6.jpeg',
-            'camisetas-mujer/camiseta7.jpeg',
-            'camisetas-mujer/camiseta8.jpeg',
-            'camisetas-mujer/camiseta9.jpeg',
+    'camisetas-hombre': [
+            
+        ],
+    'camisetas-mujer': [
             'camisetas-mujer/camiseta10.jpeg',
             'camisetas-mujer/camiseta11.jpeg',
             'camisetas-mujer/camiseta12.jpeg',
@@ -52,41 +48,40 @@ document.addEventListener('DOMContentLoaded', () => {
             'camisetas-mujer/camiseta15.jpeg',
             'camisetas-mujer/camiseta16.jpeg',
             'camisetas-mujer/camiseta17.jpeg',
-            'camisetas-mujer/camiseta18.jpeg'
+            'camisetas-mujer/camiseta18.jpeg',
+            'camisetas-mujer/camiseta3.jpeg',
+            'camisetas-mujer/camiseta4.jpeg',
+            'camisetas-mujer/camiseta5.jpeg',
+            'camisetas-mujer/camiseta6.jpeg',
+            'camisetas-mujer/camiseta7.jpeg',
+            'camisetas-mujer/camiseta8.jpeg',
+            'camisetas-mujer/camiseta9.jpeg',
+            'camisetas-mujer/camisetas.jpg'
         ],
-        'jeans-hombre': [
-            'jeans-hombre/JeansHombre1.jpeg',
-            'jeans-hombre/JeansHombre2.jpeg',
-            'jeans-hombre/JeansHombre3.jpeg',
-            'jeans-hombre/JeansHombre4.jpeg',
-            'jeans-hombre/JeansHombre5.jpeg',
-            'jeans-hombre/JeansHombre6.jpeg',
-            'jeans-hombre/JeansHombre7.jpeg',
-            'jeans-hombre/Jeans8.jpeg',
-            'jeans-hombre/Jeans9.jpeg',
+    'jeans-hombre': [
             'jeans-hombre/Jeans10.jpeg',
             'jeans-hombre/Jeans11.jpeg',
-            'jeans-hombre/Jeans12.jpeg',
-            'jeans-hombre/Jeans13.jpeg',
-            'jeans-hombre/Jeans14.jpeg',
-            'jeans-hombre/Jeans15.jpeg',
-            'jeans-hombre/Jeans16.jpeg',
-            'jeans-hombre/Jeans17.jpeg',
-            'jeans-hombre/Jeans18.jpeg',
-            'jeans-hombre/Jeans19.jpeg',
-            'jeans-hombre/Jeans20.jpeg',
-            
+            'jeans-hombre/jeans12.jpeg',
+            'jeans-hombre/jeans13.jpeg',
+            'jeans-hombre/jeans14.jpeg',
+            'jeans-hombre/jeans15.jpeg',
+            'jeans-hombre/jeans16.jpeg',
+            'jeans-hombre/jeans17.jpeg',
+            'jeans-hombre/jeans18.jpeg',
+            'jeans-hombre/jeans19.jpeg',
+            'jeans-hombre/jeans20.jpeg',
+            'jeans-hombre/Jeans8.jpeg',
+            'jeans-hombre/Jeans9.jpeg',
+            'jeans-hombre/JeansHombre1.jpeg',
+            'jeans-hombre/JeansHombre2.jpeg',
+            'jeans-hombre/jeansHombre3.jpeg',
+            'jeans-hombre/jeansHombre4.jpeg',
+            'jeans-hombre/jeansHombre5.jpeg',
+            'jeans-hombre/JeansHombre6.jpeg',
+            'jeans-hombre/JeansHombre7.jpeg'
         ],
-        'jeans-mujer': [
+    'jeans-mujer': [
             'jeans-mujer/jeans1.jpeg',
-            'jeans-mujer/jeans2.jpeg',
-            'jeans-mujer/jeans3.jpeg',
-            'jeans-mujer/jeans4.jpeg',
-            'jeans-mujer/jeans5.jpeg',
-            'jeans-mujer/jeans6.jpeg',
-            'jeans-mujer/jeans7.jpeg',
-            'jeans-mujer/jeans8.jpeg',
-            'jeans-mujer/jeans9.jpeg',
             'jeans-mujer/jeans10.jpeg',
             'jeans-mujer/jeans11.jpeg',
             'jeans-mujer/jeans12.jpeg',
@@ -97,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'jeans-mujer/jeans17.jpeg',
             'jeans-mujer/jeans18.jpeg',
             'jeans-mujer/jeans19.jpeg',
+            'jeans-mujer/jeans2.jpeg',
             'jeans-mujer/jeans20.jpeg',
             'jeans-mujer/jeans21.jpeg',
             'jeans-mujer/jeans22.jpeg',
@@ -105,20 +101,31 @@ document.addEventListener('DOMContentLoaded', () => {
             'jeans-mujer/jeans25.jpeg',
             'jeans-mujer/jeans26.jpeg',
             'jeans-mujer/jeans27.jpeg',
-
+            'jeans-mujer/jeans3.jpeg',
+            'jeans-mujer/jeans4.jpeg',
+            'jeans-mujer/jeans5.jpeg',
+            'jeans-mujer/jeans6.jpeg',
+            'jeans-mujer/jeans7.jpeg',
+            'jeans-mujer/jeans8.jpeg',
+            'jeans-mujer/jeans9.jpeg'
         ],
-        'accesorios-hombre': [
+    'accesorios-hombre': [
+            'accesorios-hombre/billetera2.jpeg',
+            'accesorios-hombre/Billetera3.jpeg',
+            'accesorios-hombre/billeteria1.jpeg',
             'accesorios-hombre/reloj1.jpeg',
             'accesorios-hombre/reloj2.jpeg',
             'accesorios-hombre/reloj3.jpeg',
             'accesorios-hombre/reloj4.jpeg',
-            'accesorios-hombre/reloj5.jpeg',
-            'accesorios-hombre/billeteria1.jpeg',
-            'accesorios-hombre/billetera2.jpeg',
-            'accesorios-hombre/billetera3.jpeg',   
+            'accesorios-hombre/reloj5.jpeg'
         ],
-        'accesorios-mujer': [
-            'accesorios-mujer/bolso1.jpeg',
+    'accesorios-mujer': [
+            'accesorios-mujer/Bolso1.jpeg',
+            'accesorios-mujer/bolso10.jpeg',
+            'accesorios-mujer/bolso11.jpeg',
+            'accesorios-mujer/bolso12.jpeg',
+            'accesorios-mujer/bolso13.jpeg',
+            'accesorios-mujer/bolso14.jpeg',
             'accesorios-mujer/bolso2.jpeg',
             'accesorios-mujer/bolso3.jpeg',
             'accesorios-mujer/bolso4.jpeg',
@@ -126,41 +133,32 @@ document.addEventListener('DOMContentLoaded', () => {
             'accesorios-mujer/bolso6.jpeg',
             'accesorios-mujer/bolso8.jpeg',
             'accesorios-mujer/bolso9.jpeg',
-            'accesorios-mujer/bolso10.jpeg',
-            'accesorios-mujer/bolso11.jpeg',
-            'accesorios-mujer/bolso12.jpeg',
-            'accesorios-mujer/bolso13.jpeg',
-            'accesorios-mujer/bolso14.jpeg',
-           
+            'accesorios-mujer/termo1.jpeg',
+            'accesorios-mujer/termo2.jpeg'
         ],
-        'conjuntos-hombre': [
+    'conjuntos-hombre': [
             'conjuntos-hombre/conjunto1.jpeg',
             'conjuntos-hombre/conjunto2.jpeg',
             'conjuntos-hombre/conjunto3.jpeg',
             'conjuntos-hombre/conjunto4.jpeg',
             'conjuntos-hombre/conjunto5.jpeg',
-            'conjuntos-hombre/conjunto6.jpeg',
+            'conjuntos-hombre/conjunto6.jpeg'
         ],
-        'conjuntos-mujer': [],
-        'deporte-hombre': [],
-        'deporte-mujer': [],
-        'hogar': [
-            'UtilesDeHogar/lampara1.jpeg',
-            'UtilesDeHogar/lampara2.jpeg',
-            'UtilesDeHogar/lampara3.jpeg',
-            'UtilesDeHogar/colcha1.jpeg',
-            'UtilesDeHogar/colcha2.jpeg',
-            'UtilesDeHogar/colcha3.jpeg',
-            'UtilesDeHogar/colcha4.jpeg',
-            'UtilesDeHogar/colcha5.jpeg',
-            'UtilesDeHogar/colcha6.jpeg',
-            'UtilesDeHogar/colcha7.jpeg',
-            'UtilesDeHogar/colcha8.jpeg',
-            'UtilesDeHogar/colcha9.jpeg',
-            'UtilesDeHogar/colcha10.jpeg',
-            'UtilesDeHogar/colcha11.jpeg',
+    'conjuntos-mujer': [
+            
         ],
-    };
+    'deporte-hombre': [
+            
+        ],
+    'deporte-mujer': [
+            
+        ],
+    'hogar': [
+            
+        ],
+};
+};
+
 
     // Limpia la galería dinámica
     function clearGallery() {
