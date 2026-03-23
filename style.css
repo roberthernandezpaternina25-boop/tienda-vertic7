@@ -43,7 +43,7 @@ body {
     justify-content: center;
     gap: 15px;
     margin-bottom: 80px; /* Espacio generoso antes de los productos */
-    border-bottom: 1px solid var(--border-color); /* Línea sutil decorativa */
+    border-bottom: 2px solid #0d6efd; /* Línea azul debajo de los botones */
     padding-bottom: 20px;
 }
 

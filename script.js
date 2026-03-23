@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'camisetas-mujer/camisetas.jpg'
         ],
     'jeans-hombre': [
-            'jeans-hombre/Jeans10.jpeg',
-            'jeans-hombre/Jeans11.jpeg',
+            'jeans-hombre/jeans10.jpeg',
+            'jeans-hombre/jeans11.jpeg',
             'jeans-hombre/jeans12.jpeg',
             'jeans-hombre/jeans13.jpeg',
             'jeans-hombre/jeans14.jpeg',
@@ -70,15 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'jeans-hombre/jeans18.jpeg',
             'jeans-hombre/jeans19.jpeg',
             'jeans-hombre/jeans20.jpeg',
-            'jeans-hombre/Jeans8.jpeg',
-            'jeans-hombre/Jeans9.jpeg',
-            'jeans-hombre/JeansHombre1.jpeg',
-            'jeans-hombre/JeansHombre2.jpeg',
+            'jeans-hombre/jeans8.jpeg',
+            'jeans-hombre/jeans9.jpeg',
+            'jeans-hombre/jeansHombre1.jpeg',
+            'jeans-hombre/jeansHombre2.jpeg',
             'jeans-hombre/jeansHombre3.jpeg',
             'jeans-hombre/jeansHombre4.jpeg',
             'jeans-hombre/jeansHombre5.jpeg',
-            'jeans-hombre/JeansHombre6.jpeg',
-            'jeans-hombre/JeansHombre7.jpeg'
+            'jeans-hombre/jeansHombre6.jpeg',
+            'jeans-hombre/jeansHombre7.jpeg'
         ],
     'jeans-mujer': [
             'jeans-mujer/jeans1.jpeg',
