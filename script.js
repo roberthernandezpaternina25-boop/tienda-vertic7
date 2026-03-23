@@ -153,7 +153,21 @@ document.addEventListener('DOMContentLoaded', () => {
     'deporte-mujer': [
             
         ],
-    'hogar': [
+    'UtilesDeHogar': [
+            'UtilesDeHogar/colcha1.jpeg',
+            'UtilesDeHogar/colcha2.jpeg',
+            'UtilesDeHogar/colcha3.jpeg',
+            'UtilesDeHogar/colcha4.jpeg',   
+            'UtilesDeHogar/colcha5.jpeg',
+            'UtilesDeHogar/colcha6.jpeg',
+            'UtilesDeHogar/colcha7.jpeg',
+            'UtilesDeHogar/colcha8.jpeg',
+            'UtilesDeHogar/colcha9.jpeg',
+            'UtilesDeHogar/colcha10.jpeg',
+            'UtilesDeHogar/colcha11.jpeg',
+            'UtilesDeHogar/lampara1.jpeg',
+            'UtilesDeHogar/lampara2.jpeg',
+            'UtilesDeHogar/lampara3.jpeg',
             
         ],
 
