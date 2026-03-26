@@ -153,21 +153,18 @@ document.addEventListener('DOMContentLoaded', () => {
     'deporte-mujer': [
             
         ],
-    'UtilesDeHogar': [
-            'UtilesDeHogar/colcha1.jpeg',
-            'UtilesDeHogar/colcha2.jpeg',
-            'UtilesDeHogar/colcha3.jpeg',
-            'UtilesDeHogar/colcha4.jpeg',   
-            'UtilesDeHogar/colcha5.jpeg',
-            'UtilesDeHogar/colcha6.jpeg',
-            'UtilesDeHogar/colcha7.jpeg',
-            'UtilesDeHogar/colcha8.jpeg',
-            'UtilesDeHogar/colcha9.jpeg',
-            'UtilesDeHogar/colcha10.jpeg',
-            'UtilesDeHogar/colcha11.jpeg',
-            'UtilesDeHogar/lampara1.jpeg',
-            'UtilesDeHogar/lampara2.jpeg',
-            'UtilesDeHogar/lampara3.jpeg',
+    'hogar': [
+            
+          
+            'hogar/colcha19.jpeg',
+            'hogar/colcha20.jpeg',
+            'hogar/colcha21.jpeg',
+            'hogar/colcha22.jpeg',
+            'hogar/colcha23.jpeg',
+            'hogar/colcha24.jpeg',
+            'hogar/colcha25.jpeg',
+            'hogar/colcha26.jpeg',
+
             
         ],
 
@@ -401,6 +398,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // BOTÓN COMPRAR (WHATSAPP)
+
+    // BANNER ROTATIVO
+    const banner = document.querySelector('.hero-banner');
+    if (banner) {
+        const slidesContainer = banner.querySelector('.slides');
+        if (slidesContainer && slidesContainer.children.length === 0 && window.PUBLICIDAD_IMAGES && window.PUBLICIDAD_IMAGES.length) {
+            window.PUBLICIDAD_IMAGES.forEach((p, i) => {
+                const s = document.createElement('div');
+                s.className = 'slide';
+                if (i === 0) s.classList.add('active');
+                const img = document.createElement('img');
+                img.src = p;
+                img.alt = `Banner ${i+1}`;
+                s.appendChild(img);
+                slidesContainer.appendChild(s);
+            });
+        }
+        const slides = Array.from(banner.querySelectorAll('.slide'));
+        const nextBtn = banner.querySelector('.banner-next');
+        const prevBtn = banner.querySelector('.banner-prev');
+        const indicatorsWrap = banner.querySelector('.banner-indicators');
+        let current = 0;
+        let timer = null;
+
+        function showSlide(idx) {
+            slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+            updateIndicators(idx);
+            current = idx;
+        }
+
+        function nextSlide() { showSlide((current + 1) % slides.length); }
+        function prevSlide() { showSlide((current - 1 + slides.length) % slides.length); }
+
+        function startAuto() { if (!timer) timer = setInterval(nextSlide, 4000); }
+        function stopAuto() { if (timer) { clearInterval(timer); timer = null; } }
+
+        // crear indicadores
+        slides.forEach((_, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'indicator';
+            btn.setAttribute('aria-label', `Ir al banner ${i+1}`);
+            btn.addEventListener('click', () => { showSlide(i); stopAuto(); startAuto(); });
+            indicatorsWrap.appendChild(btn);
+        });
+
+        function updateIndicators(idx) {
+            indicatorsWrap.querySelectorAll('.indicator').forEach((b, i) => b.classList.toggle('active', i === idx));
+        }
+
+        nextBtn && nextBtn.addEventListener('click', () => { nextSlide(); stopAuto(); startAuto(); });
+        prevBtn && prevBtn.addEventListener('click', () => { prevSlide(); stopAuto(); startAuto(); });
+
+        banner.addEventListener('mouseenter', stopAuto);
+        banner.addEventListener('mouseleave', startAuto);
+
+        showSlide(0);
+        startAuto();
+    }
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('buy-btn')) {
             const product = e.target.dataset.product || 'un producto';

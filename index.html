@@ -10,6 +10,23 @@
 
     <header class="title-container">
         <img src="logo/logo-1.jpg" alt="Vertic7 Logo" class="logo">
+        <div class="hero-banner" aria-label="Banner rotativo">
+            <div class="slides"></div>
+            <div class="banner-controls">
+                <button class="banner-prev" aria-label="Anterior">‹</button>
+                <button class="banner-next" aria-label="Siguiente">›</button>
+            </div>
+            <div class="banner-indicators" aria-hidden="false"></div>
+        </div>
+
+        <script>
+            window.PUBLICIDAD_IMAGES = [
+                "publicidad/publicidad-estampado.png",
+                "publicidad/publicidad1.png",
+                "publicidad/publicidad2.png",
+                "publicidad/publicidad3.png"
+            ];
+        </script>
         <button id="cart-toggle" class="cart-toggle" aria-label="Abrir carrito">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#1a1a1a" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14l.84-2h7.45c.73 0 1.38-.41 1.68-1.03l1.93-4.25-1.8-.82L16.2 9H9.14L8.36 7H3v2h3.36l1.8 4.5c.24.6.79 1 1.44 1H17v-2H9.34L8.7 14H7.16z"/></svg>
             <span id="cart-count" class="cart-count">0</span>
